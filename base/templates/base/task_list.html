@@ -4,12 +4,13 @@
     <tr>
         <th>Item</th>
     </tr>
-    {% for task in object_list %}
+    {% for task in tasks %}
     <tr>
         <td>{{task.title}}</td>
+        <td><a href="{% url 'task' task.id %}">view</a> </td>
     </tr>
-    {% if empty %}
+    {% empty %}
     <h3>No items in list</h3>
-    {% endif %}
+   
     {% endfor %}
 </table>
